@@ -1,0 +1,127 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/static/css.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="one">
+            <p class="one_top">우리 응애 생일파티에 초대합니다&hearts;</p>
+        </div>
+        <div class="two">
+            <p>
+                <strong>[초대합니다]</strong><br>
+                <br>
+                <br>
+                <br>
+                우리의 아름다운 아기가 세상에 태어난지,<br>
+                <br>
+                365일째 되는 날입니다.<br>
+                <br>
+                바쁘신 와중에도 자리에 참석하여<br>
+                <br>
+                자리를 빛내주시면 감사하겠습니다.
+            </p>
+        </div>
+        <div class="table">
+            <p><strong>생일파티 '2023년 9월 29일<br> D-day:{{diff}}일</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <td>일</td>
+                        <td>월</td>
+                        <td>화</td>
+                        <td>수</td>
+                        <td>목</td>
+                        <td>금</td>
+                        <td>토</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td style="background-color: red; color: white;">29</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <p><strong>오시는길&hearts;</strong></p>
+            <div id="daumRoughmapContainer1694072078628" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+            <script charset="UTF-8" class="daum_roughmap_loader_script"
+                src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+            <script charset="UTF-8">
+                new daum.roughmap.Lander({
+                    "timestamp": "1694072078628",
+                    "key": "2g525",
+                    "mapWidth": "640",
+                    "mapHeight": "360"
+                }).render();
+            </script>
+        </div>
+        <div class="text">
+            <p><strong>축하메시지&hearts;</strong></p>
+            <form action="/write" method="post" class="text low">
+                <input type="text" name="name" placeholder="이름">
+                <textarea rows="10" name="content" placeholder="내용"></textarea>
+                <button type="submit">남기다</button>
+            </form>
+            <table class="textarea">
+                <tbody>
+                    {%for gd in textbook%}
+                    <tr>
+                        <td>{{gd.name}}</td>
+                        <td>{{gd.content}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
